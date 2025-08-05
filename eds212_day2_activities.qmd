@@ -6,6 +6,40 @@ editor: visual
 
 ## Quarto
 ```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+first_fun <- function(x) {
+  2*x
+}
+first_fun(3)
+```
+
+
+```{r}
+
+D(expr = expression((2*(3*x +2)^4) - 5),name = "x")
+
+next_function <- function(x) {
+  2 * (4 * (3 * (3 * x + 2)^3))
+}
+next_function(1.2)
+```
+
+
+```{r}
+ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_jitter(aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Flipper length (mm)",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
+  facet_wrap(~island) +
+  theme_minimal()
 
 ```
+
+
 
